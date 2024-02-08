@@ -1,4 +1,33 @@
 # model-mapper-test
+<details>
+<summary>목차</summary>
+
+- [Model Mapper란](#model-mapper란)
+- [⚙️환경설정](#⚙️환경설정)
+    - [의존 추가](#의존-추가)
+    - [스프링 빈등록](#스프링-빈등록)
+- [매핑 전략](#매핑-전략)
+    - [@com.sh.app.property 예제](#comshappproperty-예제)
+- [다양한 매핑 케이스](#다양한-매핑-케이스)
+	- [1. 필드명이 다른 경우](#1-필드명이-다른-경우)
+		- [@com.sh.app.time 예제](#comshapptime-예제)
+	- [2. 계층구조가 다른 경우](#2-계층구조가-다른-경우)
+		- [@com.sh.app.order 예제](#comshapporder-예제)
+		- [@com.sh.app.game 예제](#comshappgame-예제)
+	- [3. collection value을 single value로 변환하는 경우](#3-collection-value을-single-value로-변환하는-경우)
+		- [@com.sh.app.team 예제](#comshappteam-예제)
+	- [4. collection value를 collection value로 변환하는 경우](#4-collection-value를-collection-value로-변환하는-경우)
+		- [@com.sh.app.type.token 예제](#comshapptypetoken-예제)
+		- [@com.sh.app.chatroom 예제](#comshappchatroom-예제)
+	- [5. 특정필드를 skip하는 경우](#5-특정필드를-skip하는-경우)
+		- [@com.sh.app.person 예제](#comshappperson-예제)
+	- [6. 기존 객체에 update mapping하는 경우](#6-기존-객체에-update-mapping하는-경우)
+		- [@com.sh.app.note 예제](#comshappnote-예제)
+- [SeeAlso](#seealso)
+
+</details>
+
+
 ## Model Mapper란
 
 Java 객체 간 매핑을 자동화하는 오픈 소스 라이브러리
@@ -168,3 +197,5 @@ modelMapper.getConfiguration().setSkipNullEnabled(true);
 
 ## SeeAlso
 [https://www.baeldung.com/java-modelmapper](https://www.baeldung.com/java-modelmapper)
+
+
