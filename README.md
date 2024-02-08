@@ -1,5 +1,38 @@
 # model-mapper-test
+## Model Mapper란
 
+Java 객체 간 매핑을 자동화하는 오픈 소스 라이브러리
+
+JPA 엔티티와 DTO(Data Transfer Object) 간 매핑처럼 서로 다른 구조를 가진 객체들을 간편하게 변환할수 있다.
+
+## ⚙️환경설정
+
+### 의존 추가
+
+```xml
+<dependency>
+    <groupId>org.modelmapper</groupId>
+    <artifactId>modelmapper</artifactId>
+    <version>3.2.0</version>
+</dependency>
+```
+
+```groovy
+implementation 'org.modelmapper:modelmapper:3.2.0'
+```
+
+### 스프링 빈등록
+
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+
+}
+```
 ## 매핑 전략
 ModelMapper객체에 전략을 설정할 수 있다.
 - LOOSE 토큰(필드명을 쪼갠 문자열)이 계층구조를 포함해 어떤 순서로도 일치한다면 매핑. 
